@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'] // fix plural property
+  styleUrls: ['./app.component.css']
 })
 /**
  * Root app component for the AI Chat Bot frontend.

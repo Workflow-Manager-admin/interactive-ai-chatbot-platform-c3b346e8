@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { ChatService } from './core/chat.service';
+import { Component } from '@angular/core';
 
 // PUBLIC_INTERFACE
 @Component({

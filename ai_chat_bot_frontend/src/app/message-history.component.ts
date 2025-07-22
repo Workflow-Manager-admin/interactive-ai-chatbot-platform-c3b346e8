@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { DatePipe } from '@angular/common';
-import { ChatService } from './core/chat.service';
 
 // PUBLIC_INTERFACE
 @Component({
@@ -9,6 +8,4 @@ import { ChatService } from './core/chat.service';
   styleUrls: ['./message-history.component.css'],
   providers: [DatePipe]
 })
-export class MessageHistoryComponent {
-  // Remove unused variables
-}
+export class MessageHistoryComponent {}

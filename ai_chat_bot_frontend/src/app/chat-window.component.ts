@@ -1,5 +1,6 @@
+/* global setTimeout */
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
-import { ChatService, ChatMessage } from './core/chat.service';
+import { ChatMessage } from './core/chat.service';
 
 // PUBLIC_INTERFACE
 @Component({
@@ -22,18 +23,13 @@ export class ChatWindowComponent implements OnInit {
   @ViewChild('scrollContainer') scrollContainer?: ElementRef;
 
   ngOnInit() {
-    // @ts-ignore
     setTimeout(() => this.scrollToBottom(), 0);
-    // Subscribe for new messages and bot typing state here as appropriate,
-    // If unused, remove these variables and subscriptions.
   }
 
   sendMessage() {
     const msg = (this.userInput ?? '').trim();
     if (msg) {
-      // Send message via global ChatService (should be injected by parent/module)
       this.userInput = '';
-      // @ts-ignore
       setTimeout(() => this.scrollToBottom(), 50);
     }
   }
