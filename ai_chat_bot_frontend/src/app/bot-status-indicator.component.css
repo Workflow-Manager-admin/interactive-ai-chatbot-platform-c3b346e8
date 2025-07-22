@@ -1,0 +1,22 @@
+.bot-status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.97rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+.status-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 7px;
+  background: var(--status-offline);
+  transition: background 0.3s;
+  margin-right: 2px;
+}
+.status-dot.on { background: var(--status-online);}
+.status-dot.off { background: var(--status-offline);}
+.status-label {
+  font-size: 0.97rem;
+}

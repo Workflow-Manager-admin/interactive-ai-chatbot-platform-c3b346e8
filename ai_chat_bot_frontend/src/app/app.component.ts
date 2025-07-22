@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
+// PUBLIC_INTERFACE
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // fix plural property
 })
+/**
+ * Root app component for the AI Chat Bot frontend.
+ * Renders the sidebar, header, and main chat interface, and provides overall layout.
+ */
 export class AppComponent {
-  title = 'angular';
+  /** Used in header for app title */
+  title = 'AI Chat Bot';
+
+  /** Sidebar tab selection */
+  selectedTab: string = 'chat';
 }

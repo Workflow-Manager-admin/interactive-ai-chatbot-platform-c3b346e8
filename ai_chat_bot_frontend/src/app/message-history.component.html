@@ -1,0 +1,9 @@
+<div class="msg-history">
+  <div class="msg-history-item" *ngFor="let item of history$ | async">
+    <div class="msg-snippet" [innerHTML]="item.userMsg"></div>
+    <div class="msg-time">{{ item.time | date:'short' }}</div>
+  </div>
+  <div *ngIf="(history$ | async)?.length===0" class="empty-history">
+    No message history yet.
+  </div>
+</div>

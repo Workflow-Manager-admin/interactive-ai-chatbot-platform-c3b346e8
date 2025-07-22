@@ -1,0 +1,31 @@
+<div class="chat-view" #scrollContainer>
+  <ng-container *ngFor="let msg of messages">
+    <div class="msg-row" [class.from-user]="msg.role==='user'" [class.from-bot]="msg.role==='bot'">
+      <div class="msg-avatar" [ngClass]="msg.role">
+        <span *ngIf="msg.role==='user'">🧑</span>
+        <span *ngIf="msg.role==='bot'">🤖</span>
+      </div>
+      <div class="msg-bubble" [ngClass]="msg.role" [innerHTML]="msg.content"></div>
+    </div>
+  </ng-container>
+  <div *ngIf="isBotTyping" class="msg-row from-bot">
+    <div class="msg-avatar bot"><span>🤖</span></div>
+    <div class="msg-bubble bot"><span class="dotting"></span></div>
+  </div>
+</div>
+<div class="input-row">
+  <div class="input-wrap">
+    <div
+      class="text-input"
+      contenteditable="true"
+      placeholder="Type your message"
+      [(ngModel)]="userInput"
+      (keydown)="onInputKeyDown($event)"
+      role="textbox"
+      aria-label="Message input"
+    ></div>
+  </div>
+  <button [disabled]="!userInput.trim()" (click)="sendMessage()" class="send-btn" aria-label="Send">
+    <svg width="22" height="22" fill="none" viewBox="0 0 18 18"><path d="m2.211 1.302 14.668 5.868a1.5 1.5 0 0 1 0 2.784L2.21 15.822a1.5 1.5 0 0 1-2.089-1.527l.612-4.1a.5.5 0 0 1 .465-.41l8.5-.607a.5.5 0 0 0 0-.996l-8.5-.606a.5.5 0 0 1-.465-.41l-.612-4.1A1.5 1.5 0 0 1 2.211 1.302Z" fill="#2D9CDB"/></svg>
+  </button>
+</div>

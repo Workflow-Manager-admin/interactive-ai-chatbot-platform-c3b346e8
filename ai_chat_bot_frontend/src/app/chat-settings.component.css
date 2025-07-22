@@ -1,0 +1,13 @@
+.settings {
+  padding: 4px 2px 10px;
+}
+.settings-item {
+  padding: 6px 0;
+  color: var(--text-main);
+  font-size: 0.95rem;
+}
+.settings-tip {
+  color: var(--text-muted);
+  font-size: 0.87rem;
+  padding-top: 0.7rem;
+}
