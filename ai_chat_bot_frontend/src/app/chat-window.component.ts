@@ -1,12 +1,16 @@
 /* global setTimeout */
 import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ChatMessage } from './core/chat.service';
 
 // PUBLIC_INTERFACE
 @Component({
   selector: 'app-chat-window',
+  standalone: true,
   templateUrl: './chat-window.component.html',
-  styleUrls: ['./chat-window.component.css']
+  styleUrls: ['./chat-window.component.css'],
+  imports: [CommonModule, FormsModule]
 })
 /**
  * Main chat window with scrolling message area and input.
